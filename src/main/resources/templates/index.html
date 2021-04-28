@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Habit Tracker</title>
+</head>
+<body>
+
+<h1>Habit Tracker</h1>
+
+<ul>
+    <th:block th:each="habit : ${habits}">
+        <li th:text="${habit}"></li>
+    </th:block>
+</ul>
+
+<form method="post">
+    <input type="text" name="habitName">
+    <input type="submit" value="Add Habit">
+</form>
+</body>
+</html>
