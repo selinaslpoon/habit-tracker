@@ -10,10 +10,20 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    private static List<String> habits = new ArrayList<>();
+    static List<String> habits = new ArrayList<>();
+    static List<Integer> dates = new ArrayList<>();
+
+    public HomeController() {
+        //temporary list of dates
+        for (int i = 1; i < 32; i++ ) {
+            dates.add(i);
+        }
+    }
 
     @GetMapping
     public String displayAllHabits(Model model) {
+
+        model.addAttribute("dates", dates);
         model.addAttribute("habits", habits);
         return "index";
     }

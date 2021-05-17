@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--    original links-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>-->
 </head>
+
 <body>
 
+<nav th:fragment="header" class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Habit Tracker</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">All Habits<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">My Habits</a></li>
+                    <li><a href="#">Shared Habits</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Jan</a></li>
+            <li><a href="#">Feb</a></li>
+            <li><a href="#">Mar</a></li>
+            <li><a href="#">Apr</a></li>
+            <li class="active"><a href="#">May</a></li>
+            <li><a href="#">Jun</a></li>
+            <li><a href="#">Jul</a></li>
+            <li><a href="#">Aug</a></li>
+            <li><a href="#">Sep</a></li>
+            <li><a href="#">Oct</a></li>
+            <li><a href="#">Nov</a></li>
+            <li><a href="#">Dec</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!--<nav th:fragment="header">-->
+<!--    <h1>Habit Tracker</h1>-->
+<!--    <ul class="nav">-->
+<!--        <li class="nav-item"><a href="/habits">All Habits </a></li>-->
+<!--        <li class="nav-item"><a href="/myhabits">My Habits </a></li>-->
+<!--        <li class="nav-item"><a href="/sharedhabits">Shared Habits </a></li>-->
+<!--    </ul>-->
+<!--</nav>-->
 </body>
 </html>
