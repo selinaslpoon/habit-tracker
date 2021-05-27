@@ -39,15 +39,9 @@ public class HomeController {
         return "index";
     }
 
-//    @GetMapping
-//    public String addHabitForm(Model model) {
-//        model.addAttribute(new Habit());
-//        return "index";
-//    }
 
     @PostMapping
     public String processAddHabit(@ModelAttribute Habit newHabit, Model model) {
-//        model.addAttribute(new Habit());
         habitRepository.save(newHabit);
         return "redirect:";
     }
