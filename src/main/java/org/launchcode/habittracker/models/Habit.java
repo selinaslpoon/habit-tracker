@@ -3,7 +3,6 @@ package org.launchcode.habittracker.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.validation.constraints.NotBlank;
 //import javax.validation.constraints.Size;
 
 
@@ -19,11 +18,11 @@ public class Habit {
 //    @Size(max=50, message = "Please enter shorter name")
     private String name;
 
-    //empty protected constructor used by JPA to create new instance
-    public Habit() {    }
-
     //constructor
     public Habit(String name) { this.name = name; }
+
+    //empty protected constructor used by JPA to create new instance
+    public Habit() {    }
 
     //getters & setters
     public int getId() { return id; }

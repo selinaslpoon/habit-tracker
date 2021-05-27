@@ -1,6 +1,5 @@
 package org.launchcode.habittracker;
 
-import org.launchcode.habittracker.models.Habit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,7 +10,7 @@ public class HabitTrackerApplication {
 		SpringApplication.run(HabitTrackerApplication.class, args);
 	}
 
-	private Habit habit = new Habit();
+	//	private Habit habit = new Habit();
 
 
 }

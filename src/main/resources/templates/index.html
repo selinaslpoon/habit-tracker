@@ -10,7 +10,7 @@
     <thead>
         <th>Habits</th>
         <th:block th:each="date : ${dates}">
-            <th th:text="${date}"></th>
+            <th th:text="${date.getDayOfMonth()}"></th>
         </th:block>
     </thead>
 
@@ -20,8 +20,12 @@
         <th:block th:each="date : ${dates}">
 <!--            Placeholder for each checkbox-->
             <td>
+
                 <div class="checkbox">
-                    <label><input type="checkbox" value=""></label>
+                    <label><input type="checkbox"
+                                  th:value="${date} + ${habit.id}"
+
+                                  th:checked="${flag}"></label>
                 </div>
             </td>
 <!--            Lists out each date-->
