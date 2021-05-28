@@ -66,9 +66,14 @@ public class HomeController {
 
     @GetMapping
     public String displayAllHabits(Model model) {
-        //test for creating and saving new habits
-//        Habit newHabit = new Habit("Walk dog");
-//        habitRepository.save(newHabit);
+        //test for creating and saving new habits AND TRACKER
+        Habit newHabit = new Habit("new tracker test");
+        habitRepository.save(newHabit);
+        Tracker newTracker = new Tracker();
+        newTracker.setHabit(newHabit);
+        LocalDate testDate = LocalDate.of(2021, 5, 1);
+        newTracker.setDate(testDate);
+        trackerRepository.save(newTracker);
 
         //new instance of habit for add habit form
         model.addAttribute(new Habit());
