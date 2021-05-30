@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 //Toggle tokens: https://uxmovement.com/forms/why-toggle-tokens-are-a-better-alternative-to-checkboxes/
 //https://getbootstrap.com/docs/4.1/components/buttons/
@@ -66,14 +67,30 @@ public class HomeController {
 
     @GetMapping
     public String displayAllHabits(Model model) {
-        //test for creating and saving new habits AND TRACKER
-        Habit newHabit = new Habit("new tracker test");
-        habitRepository.save(newHabit);
-        Tracker newTracker = new Tracker();
-        newTracker.setHabit(newHabit);
-        LocalDate testDate = LocalDate.of(2021, 5, 1);
-        newTracker.setDate(testDate);
-        trackerRepository.save(newTracker);
+//        //test for creating and saving new habits AND TRACKER
+//        Habit newHabit = new Habit("second tracker test");
+//        habitRepository.save(newHabit);
+//        Tracker newTracker = new Tracker();
+//        newTracker.setHabit(newHabit);
+//        LocalDate testDate = LocalDate.of(2021, 5, 1);
+//        newTracker.setDate(testDate);
+//        trackerRepository.save(newTracker);
+
+        //delete tracker by ID
+
+        Optional<Tracker> delTracker = trackerRepository.findById(114);
+        if (!delTracker.isEmpty()) {
+            trackerRepository.deleteById(delTracker.get().getId());
+        }
+
+        //delete habit by ID
+
+        Optional<Habit> delHabit = habitRepository.findById(111);
+        if (!delHabit.isEmpty()) {
+            habitRepository.deleteById(delHabit.get().getId());
+        }
+
+
 
         //new instance of habit for add habit form
         model.addAttribute(new Habit());
