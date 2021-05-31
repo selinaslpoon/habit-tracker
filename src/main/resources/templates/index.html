@@ -13,19 +13,25 @@
             <th th:text="${date.getDayOfMonth()}"></th>
         </th:block>
     </thead>
-
-    <th:block th:each="habit : ${habits}">
+<!--iterate through each habit-->
+<!--    <th:block th:each="habit : ${habits}">-->
+    <th:block th:each="i : ${#numbers.sequence(0, #arrays.length(habits)-1)}">
     <tr>
-        <td th:text="${habit.name}"></td>
-        <th:block th:each="date : ${dates}">
+        <td th:text="${habits[i].name}"></td>
+<!--        iterate through each date-->
+<!--        <th:block th:each="date : ${dates}">-->
+
+<!--        alternative iterate using index i-->
+<!--        <th:block th:each="j : ${#numbers.sequence(0, #arrays.length(dates)-1)}">-->
+
+<!--        iterate through each habit line-->
+        <th:block th:each="complete : ${isComplete[i]}">
 <!--            Placeholder for each checkbox-->
             <td>
-
                 <div class="checkbox">
                     <label><input type="checkbox"
-                                  th:value="${date} + ${habit.id}"
-
-                                  th:checked="${flag}"></label>
+                                  th:value="${complete}"
+                                  th:checked="${complete}"></label>
                 </div>
             </td>
 <!--            Lists out each date-->
