@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 //Toggle tokens: https://uxmovement.com/forms/why-toggle-tokens-are-a-better-alternative-to-checkboxes/
 //https://getbootstrap.com/docs/4.1/components/buttons/
@@ -67,6 +66,7 @@ public class HomeController {
 
     @GetMapping
     public String displayAllHabits(Model model) {
+
 //        //test for creating and saving new habits AND TRACKER
 //        Habit newHabit = new Habit("second tracker test");
 //        habitRepository.save(newHabit);
@@ -76,19 +76,46 @@ public class HomeController {
 //        newTracker.setDate(testDate);
 //        trackerRepository.save(newTracker);
 
-        //delete tracker by ID
 
-        Optional<Tracker> delTracker = trackerRepository.findById(114);
-        if (!delTracker.isEmpty()) {
-            trackerRepository.deleteById(delTracker.get().getId());
-        }
+//        //delete tracker by ID
+//        Optional<Tracker> delTracker = trackerRepository.findById(114);
+//        if (!delTracker.isEmpty()) {
+//            trackerRepository.deleteById(delTracker.get().getId());
+//        }
+//
 
-        //delete habit by ID
+//        //delete habit by ID
+//        Optional<Habit> delHabit = habitRepository.findById(113);
+//        if (!delHabit.isEmpty()) {
+//            habitRepository.deleteById(delHabit.get().getId());
+//        }
 
-        Optional<Habit> delHabit = habitRepository.findById(111);
-        if (!delHabit.isEmpty()) {
-            habitRepository.deleteById(delHabit.get().getId());
-        }
+
+//        //find habit and delete tracker data - use when deleting a habit
+//       Iterable<Habit> aHabit = habitRepository.findAll();
+//       for (Habit eachHabit : aHabit) {
+//           if(eachHabit.getName().equals("second tracker test")) {
+//               Iterable<Tracker> aTracker = trackerRepository.findAll();
+//               for (Tracker eachTracker : aTracker) {
+//                   if(eachTracker.getHabit().getId() == (eachHabit.getId())) {
+//                       trackerRepository.deleteById(eachTracker.getId());
+//                   }
+//               }
+//           }
+//       }
+
+
+//        //test for finding a habit and saving new tracker - use for checkbox
+////        Iterable<Habit> aHabit = habitRepository.findAll();
+//       for (Habit eachHabit : aHabit) {
+//           if(eachHabit.getName().equals("second tracker test")) {
+//               Tracker newTracker = new Tracker();
+//               LocalDate testDate = LocalDate.of(2021, 6, 1);
+//               newTracker.setHabit(eachHabit);
+//               newTracker.setDate(testDate);
+//               trackerRepository.save(newTracker);
+//           }
+//       }
 
 
 
