@@ -1,4 +1,4 @@
-package org.launchcode.habittracker.models.data;
+package org.launchcode.habittracker.models;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

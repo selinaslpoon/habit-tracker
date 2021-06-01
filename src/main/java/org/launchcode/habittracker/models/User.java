@@ -1,7 +1,6 @@
 package org.launchcode.habittracker.models;
 
 import com.sun.istack.NotNull;
-import org.launchcode.habittracker.models.data.AbstractEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.Entity;

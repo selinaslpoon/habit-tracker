@@ -1,7 +1,5 @@
 package org.launchcode.habittracker.models;
 
-import org.launchcode.habittracker.models.data.AbstractEntity;
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
