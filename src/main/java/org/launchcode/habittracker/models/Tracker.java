@@ -1,37 +1,33 @@
 package org.launchcode.habittracker.models;
 
+import org.launchcode.habittracker.models.data.AbstractEntity;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 //import javax.validation.constraints.Size;
 
 
 @Entity
-public class Tracker {
-
-    //creates a primary key
-    @Id
-    @GeneratedValue
-    private int id;
+public class Tracker extends AbstractEntity {
 
     private LocalDate date;
 
     @ManyToOne
     private Habit habit;
 
-    //constructor
-    public Tracker(LocalDate date, Habit habit) {
-        this.date = date;
-        this.habit = habit;
-    }
 
     //empty protected constructor used by JPA to create new instance
     public Tracker() {    }
 
+    //constructor
+    public Tracker(LocalDate date, Habit habit) {
+        super();
+        this.date = date;
+        this.habit = habit;
+    }
+
     //getters & setters
-    public int getId() { return id; }
 
     public Habit getHabit() { return habit; }
 
@@ -42,12 +38,6 @@ public class Tracker {
     public void setDate(LocalDate date) { this.date = date; }
 
     //Overides
-    @Override
-    public int hashCode() { return super.hashCode(); }
-
-    @Override
-    public boolean equals(Object obj) { return super.equals(obj); }
-
     @Override
     public String toString() { return super.toString(); }
 }
