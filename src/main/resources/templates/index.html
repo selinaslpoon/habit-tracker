@@ -29,9 +29,12 @@
 <!--            Placeholder for each checkbox-->
             <td>
                 <div class="checkbox">
-                    <label><input type="checkbox"
-                                  th:value="${complete}"
-                                  th:checked="${complete}"></label>
+                    <label>
+<!--                        <input type="checkbox" th:value="${complete}" th:checked="${complete}">-->
+                        <input type="checkbox"
+                                  th:value="${habits[i].id} + ${#dates.create(2021,06,08)}"
+                                  th:checked="${complete}">
+                    </label>
                 </div>
             </td>
 <!--            Lists out each date-->

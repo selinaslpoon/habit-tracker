@@ -85,10 +85,12 @@ public class HomeController {
              }
              System.out.println(aHabit);
              isComplete.add(aHabit);
+            System.out.println(isComplete);
         }
 
         //get checkbox data
         model.addAttribute("isComplete", isComplete);
+
 
         return "index";
     }
