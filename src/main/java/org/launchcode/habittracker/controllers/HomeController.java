@@ -41,7 +41,7 @@ public class HomeController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/index")
     public String displayAllHabits(Model model) {
 
         //new instance of habit for add habit form
@@ -95,7 +95,7 @@ public class HomeController {
         return "index";
     }
 
-    @PostMapping
+    @PostMapping("/index")
     public String processAddHabit(@ModelAttribute Habit newHabit) {
         habitRepository.save(newHabit);
         return "redirect:";
