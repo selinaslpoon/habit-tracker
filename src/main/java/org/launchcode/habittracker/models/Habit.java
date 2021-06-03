@@ -1,5 +1,7 @@
 package org.launchcode.habittracker.models;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +18,7 @@ public class Habit {
 
 //    @NotBlank
 //    @Size(max=50, message = "Please enter shorter name")
+    @NotNull
     private String name;
 
     //constructor
