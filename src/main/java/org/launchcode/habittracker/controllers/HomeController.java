@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -94,10 +96,10 @@ public class HomeController {
         return "index";
     }
 
-//    @PostMapping
-//    public String processAddHabit(@ModelAttribute Habit newHabit) {
-//        habitRepository.save(newHabit);
-//        return "redirect:";
-//    }
+    @PostMapping
+    public String processAddHabit(@ModelAttribute Habit newHabit) {
+        habitRepository.save(newHabit);
+        return "redirect:";
+    }
 
 }

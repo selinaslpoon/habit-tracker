@@ -65,11 +65,11 @@ public class HabitController {
         return "/delete";
     }
 
-    @PostMapping("/habit")
-    public String processAddHabit(@ModelAttribute Habit newHabit) {
-        habitRepository.save(newHabit);
-        return "redirect:/habit";
-    }
+//    @PostMapping("/habit")
+//    public String processAddHabit(@ModelAttribute Habit newHabit) {
+//        habitRepository.save(newHabit);
+//        return "redirect:/habit";
+//    }
 
     @PostMapping("/delete")
     public String processDeleteHabit(@ModelAttribute Habit newHabit) {
