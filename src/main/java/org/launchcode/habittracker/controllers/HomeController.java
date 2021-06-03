@@ -48,6 +48,8 @@ public class HomeController {
         model.addAttribute("dates", dates);
         model.addAttribute("habits", habitRepository.findAll());
 
+
+
         //get data for checkboxes
         Iterable<Habit> allHabits = habitRepository.findAll();
         for (Habit habit : allHabits) {

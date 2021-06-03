@@ -50,55 +50,32 @@ public class HabitController {
         model.addAttribute("dates", dates);
         model.addAttribute("habits", habitRepository.findAll());
 
-//        //get data for checkboxes
-//        Iterable<Habit> allHabits = habitRepository.findAll();
-//        for (Habit habit : allHabits) {
-//            System.out.println(habit);
-//            ArrayList<Boolean> aHabit = new ArrayList<>();
-//             for (LocalDate date : dates) {
-//                 System.out.println(date);
-//                 foundComplete = 0;
-//                 System.out.println("reset to " + foundComplete);
-//                 Iterable<Tracker> allTracker = trackerRepository.findAll();
-//                 for (Tracker tracker : allTracker) {
-//                     System.out.println(tracker.getHabit().getName() + " and " + tracker.getDate());
-//                     System.out.println(tracker.getHabit().getId());
-//                     System.out.println(habit.getId());
-//                     System.out.println(tracker.getDate());
-//                     System.out.println(date);
-//                     if (tracker.getHabit().getId() == habit.getId() && tracker.getDate().compareTo(date) == 0) {
-//                         foundComplete = 1;
-//                         System.out.println("foundComplete set to : " + foundComplete);
-//                         break;
-//                     } else {
-//                         System.out.println("Could not find this habit and date in tracker");
-//                     }
-//                 }
-//
-//                 if (foundComplete == 1) {
-//                     aHabit.add(true);
-//                     System.out.println("Has been set to true");
-//                 } else if (foundComplete == 0) {
-//                     aHabit.add(false);
-//                     System.out.println("Has been set to false");
-//                 }
-//             }
-//             System.out.println(aHabit);
-//             isComplete.add(aHabit);
-//            System.out.println(isComplete);
-//        }
-//
-//        //get checkbox data
-//        model.addAttribute("isComplete", isComplete);
-
-
         return "/habit";
+    }
+
+    @GetMapping("/delete")
+    public String displayHabitsToDelete(Model model) {
+
+        //new instance of habit for add habit form
+        model.addAttribute(new Habit());
+        model.addAttribute(new Tracker());
+        model.addAttribute("dates", dates);
+        model.addAttribute("habits", habitRepository.findAll());
+
+        return "/delete";
     }
 
     @PostMapping("/habit")
     public String processAddHabit(@ModelAttribute Habit newHabit) {
         habitRepository.save(newHabit);
         return "redirect:/habit";
+    }
+
+    @PostMapping("/delete")
+    public String processDeleteHabit(@ModelAttribute Habit newHabit) {
+        System.out.println("New habit " + newHabit.getName());
+        habitRepository.save(newHabit);
+        return "redirect:/delete";
     }
 
 }
