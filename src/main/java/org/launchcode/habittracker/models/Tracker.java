@@ -21,10 +21,13 @@ public class Tracker {
     @ManyToOne
     private Habit habit;
 
+    private Boolean complete;
+
     //constructor
-    public Tracker(LocalDate date, Habit habit) {
+    public Tracker(LocalDate date, Habit habit, Boolean complete) {
         this.date = date;
         this.habit = habit;
+        this.complete = complete;
     }
 
     //empty protected constructor used by JPA to create new instance
@@ -40,6 +43,10 @@ public class Tracker {
     public LocalDate getDate() { return date; }
 
     public void setDate(LocalDate date) { this.date = date; }
+
+    public Boolean getComplete() { return complete; }
+
+    public void setComplete(Boolean complete) { this.complete = complete; }
 
     //Overides
     @Override

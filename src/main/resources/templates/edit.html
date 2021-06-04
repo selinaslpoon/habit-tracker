@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container-fluid">
+
+<header th:replace="fragments :: header"></header>
+
+<div class="container">
+<table class="table table-bordered table-striped table-condensed table-hover">
+    <thead>
+        <th>Edit Habits</th>
+    </thead>
+<!--iterate through each habit-->
+    <th:block th:each="habit : ${habits}">
+<!--    <th:block th:each="i : ${#numbers.sequence(0, #arrays.length(habits)-1)}">-->
+    <tr>
+<!--        <td th:text="${habits[i].name}">-->
+<td>
+        <form method="post">
+            <div class="input-group">
+                <input type="text" name="name" class="form-control" th:field="${habit.name}" th:placeholder="${habit.name}">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                    </button>
+                </div>
+<!--                <div class="input-group-btn">-->
+<!--                    <button class="btn btn-default" type="submit">-->
+<!--                        <i class="glyphicon glyphicon-trash"></i>-->
+<!--                    </button>-->
+<!--                </div>-->
+            </div>
+        </form>
+
+        </td>
+<!--        iterate through each date-->
+<!--        <th:block th:each="date : ${dates}">-->
+
+<!--        alternative iterate using index i-->
+<!--        <th:block th:each="j : ${#numbers.sequence(0, #arrays.length(dates)-1)}">-->
+
+<!--        iterate through each habit line-->
+<!--        <th:block th:each="complete : ${isComplete[i]}">-->
+<!--&lt;!&ndash;            Placeholder for each checkbox&ndash;&gt;-->
+<!--            <td>-->
+<!--                <div class="checkbox">-->
+<!--                    <label>-->
+<!--&lt;!&ndash;                        <input type="checkbox" th:value="${complete}" th:checked="${complete}">&ndash;&gt;-->
+<!--                        <input type="checkbox"-->
+<!--                                  th:value="${habits[i].id} + ${#dates.create(2021,06,08)}"-->
+<!--                                  th:checked="${complete}">-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </td>-->
+<!--            Lists out each date-->
+<!--            <td th:text="${date}"></td>-->
+
+<!--        </th:block>-->
+    </tr>
+    </th:block>
+
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <form method="post">-->
+<!--                <div class="input-group">-->
+<!--                    <input type="text" name="name" class="form-control" th:field="${habit.name}" placeholder="Add Habit">-->
+<!--                    <div class="input-group-btn">-->
+<!--                        <button class="btn btn-default" type="submit">-->
+<!--                            <i class="glyphicon glyphicon-plus"></i>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </form>-->
+
+<!--        </td>-->
+
+
+<!--    </tr>-->
+
+</table>
+</div>
+
+
+</body>
+</html>

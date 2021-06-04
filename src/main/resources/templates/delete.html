@@ -8,7 +8,7 @@
 <div class="container">
     <table class="table table-bordered table-striped table-condensed table-hover">
         <thead>
-        <th>Edit Habits</th>
+        <th>Delete Habits</th>
         </thead>
         <!--iterate through each habit-->
             <th:block th:each="habit : ${habits}">
@@ -18,12 +18,12 @@
                 <td>
                     <form method="post">
                         <div class="input-group">
-                            <input type="text" name="name" class="form-control" th:field="${habit.name}" th:placeholder="${habit.name}">
+                            <input type="text" name="renameHabit" class="form-control" th:field="${habit.name}" th:placeholder="${habit.name}">
 
 
 
                             <div class="input-group-btn">
-                                <button class="btn btn-default" th:field="${habit.name}" type="submit">
+                                <button class="btn btn-default"  th:field="${habit}" type="submit">
                                     <i class="glyphicon glyphicon-trash"></i>
                                 </button>
                             </div>
